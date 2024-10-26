@@ -1,3 +1,3 @@
 figma.showUI(__html__);
 
-figma.ui.resize(300, 320);
+figma.ui.resize(500, 400);

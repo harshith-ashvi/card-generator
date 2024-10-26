@@ -1,3 +1,7 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/thomas-lowry/figma-plugin-ds/dist/figma-plugin-ds.css"
+/>
 <style>
   body {
     padding: 0.8em;
@@ -31,41 +35,31 @@
     placeholder="Enter Description"
   />
 
-  <div style="display: flex; align-items: center; justify-content: flex-start">
+  <div class="switch">
     <input id="dark-mode" type="checkbox" class="switch__toggle" />
     <label for="dark-mode" class="switch__label">Dark Mode</label>
   </div>
 
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-    "
-  >
-    <div
-      style="display: flex; align-items: center; justify-content: flex-start"
-    >
-      <input id="noImage" type="radio" name="nameVariant" />
-      <label for="noImage">No Image</label>
-    </div>
+  <div class="radio">
+    <input id="noImage" type="radio" name="nameVariant" class="radio__button" />
+    <label for="noImage" class="radio__label">No Image</label>
 
-    <div
-      style="display: flex; align-items: center; justify-content: flex-start"
-    >
-      <input id="singleImage" type="radio" name="nameVariant" />
-      <label for="singleImage">Single Image</label>
-    </div>
-    <div
-      style="display: flex; align-items: center; justify-content: flex-start"
-    >
-      <input id="carsousel" type="radio" name="nameVariant" />
-      <label for="carsousel">Carsousel</label>
-    </div>
+    <input
+      id="singleImage"
+      type="radio"
+      name="nameVariant"
+      class="radio__button"
+    />
+    <label for="singleImage" class="radio__label">Single Image</label>
+
+    <input
+      id="carsousel"
+      type="radio"
+      name="nameVariant"
+      class="radio__button"
+    />
+    <label for="carsousel" class="radio__label">Carsousel</label>
   </div>
 
-  <div>
-    <button id="submit">Generate Card</button>
-  </div>
+  <button id="submit" class="button button--primary">Generate Card</button>
 </div>
