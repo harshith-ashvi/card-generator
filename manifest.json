@@ -1,18 +1,14 @@
 {
-  "name": "ASCII Test",
+  "name": "Card Generator",
   "id": "1430618355575562641",
   "api": "1.0.0",
   "main": "code.js",
   "capabilities": [],
   "enableProposedApi": false,
   "documentAccess": "dynamic-page",
-  "editorType": [
-    "figma"
-  ],
+  "editorType": ["figma"],
   "ui": "ui.html",
   "networkAccess": {
-    "allowedDomains": [
-      "none"
-    ]
+    "allowedDomains": ["none"]
   }
 }
