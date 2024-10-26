@@ -1,17 +1,71 @@
-<h2>Rectangle Creator</h2>
-<p>Count: <input id="count" type="number" value="5"></p>
-<button id="create">Create</button>
-<button id="cancel">Cancel</button>
-<script>
+<style>
+  body {
+    padding: 0.8em;
+  }
+  div {
+    margin-block: 0.2em;
+  }
+  input {
+    display: block;
+  }
+</style>
+<h2>Card Generator</h2>
+<div class="input">
+  <label for="username">Username</label>
+  <input
+    id="username"
+    class="input__field"
+    type="text"
+    placeholder="Enter Username"
+  />
 
-document.getElementById('create').onclick = () => {
-  const textbox = document.getElementById('count');
-  const count = parseInt(textbox.value, 10);
-  parent.postMessage({ pluginMessage: { type: 'create-shapes', count } }, '*')
-}
+  <label for="name">Name</label>
+  <input id="name" class="input__field" type="text" placeholder="Enter Name" />
 
-document.getElementById('cancel').onclick = () => {
-  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
-}
+  <label for="description">Description</label>
+  <input
+    id="description"
+    class="textarea"
+    type="textarea"
+    rows="3"
+    placeholder="Enter Description"
+  />
 
-</script>
+  <div style="display: flex; align-items: center; justify-content: flex-start">
+    <input id="dark-mode" type="checkbox" class="switch__toggle" />
+    <label for="dark-mode" class="switch__label">Dark Mode</label>
+  </div>
+
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    "
+  >
+    <div
+      style="display: flex; align-items: center; justify-content: flex-start"
+    >
+      <input id="noImage" type="radio" name="nameVariant" />
+      <label for="noImage">No Image</label>
+    </div>
+
+    <div
+      style="display: flex; align-items: center; justify-content: flex-start"
+    >
+      <input id="singleImage" type="radio" name="nameVariant" />
+      <label for="singleImage">Single Image</label>
+    </div>
+    <div
+      style="display: flex; align-items: center; justify-content: flex-start"
+    >
+      <input id="carsousel" type="radio" name="nameVariant" />
+      <label for="carsousel">Carsousel</label>
+    </div>
+  </div>
+
+  <div>
+    <button id="submit">Generate Card</button>
+  </div>
+</div>
