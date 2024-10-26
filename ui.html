@@ -41,7 +41,13 @@
   </div>
 
   <div class="radio">
-    <input id="noImage" type="radio" name="nameVariant" class="radio__button" />
+    <input
+      id="noImage"
+      type="radio"
+      name="nameVariant"
+      class="radio__button"
+      value="1"
+    />
     <label for="noImage" class="radio__label">No Image</label>
 
     <input
@@ -49,6 +55,7 @@
       type="radio"
       name="nameVariant"
       class="radio__button"
+      value="2"
     />
     <label for="singleImage" class="radio__label">Single Image</label>
 
@@ -57,9 +64,35 @@
       type="radio"
       name="nameVariant"
       class="radio__button"
+      value="3"
     />
     <label for="carsousel" class="radio__label">Carsousel</label>
   </div>
 
   <button id="submit" class="button button--primary">Generate Card</button>
 </div>
+
+<script>
+  document.getElementById("submit").onclick = () => {
+    const username = document.getElementById("username").value;
+    const name = document.getElementById("name").value;
+    const description = document.getElementById("description").value;
+    const isDarkMode = document.getElementById("dark-mode").checked;
+    const imageVariant = document.querySelector(
+      'input[name="nameVariant"]:checked'
+    ).value;
+
+    parent.postMessage(
+      {
+        pluginMessage: {
+          username,
+          name,
+          description,
+          isDarkMode,
+          imageVariant,
+        },
+      },
+      "*"
+    );
+  };
+</script>
