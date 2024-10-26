@@ -6,6 +6,8 @@ figma.ui.onmessage = async (pluginMessage) => {
   await figma.loadAllPagesAsync();
   await figma.loadFontAsync({ family: "Rubik", style: "Regular" });
 
+  const nodes: SceneNode[] = [];
+
   const postComponentSet = figma.root.findOne(
     (node) => node.type === "COMPONENT_SET" && node.name === "post"
   ) as ComponentSetNode;
@@ -42,6 +44,10 @@ figma.ui.onmessage = async (pluginMessage) => {
   postName.characters = pluginMessage.name;
   postUsername.characters = pluginMessage.username;
   postDescription.characters = pluginMessage.description;
+
+  nodes.push(newPost);
+
+  figma.viewport.scrollAndZoomIntoView(nodes);
 
   figma.closePlugin();
 };
